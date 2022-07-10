@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>れいかさんとかすみさんのペアワーク</title>
+  </head>
+  <body>
+    <!-- HTML -->
+    <div id="element">神奈川のこと知ってる？</div>
+    <button id="button-1">人口</button>
+    <button id="button-2">面積</button>
+    <button id="button-3">方言</button>
+    <button id="button-4">観光地</button>
+
+    <div id="answer">答え</div>
+    <script>
+      //質問[神奈川のこと知ってる？１人口2面積3方言4観光地]
+      const answerDiv = document.getElementById("answer")
+      const button1 = document.getElementById("button-1")
+      const button2 = document.getElementById("button-2")
+      const button3 = document.getElementById("button-3")
+      const button4 = document.getElementById("button-4")
+
+      button1.onclick = function () {
+        answerDiv.textContent = "905万"
+      }
+      button2.onclick = function () {
+        answerDiv.textContent = "2416平方キロメートル"
+      }
+      button3.onclick = function () {
+        answerDiv.textContent = "じゃん"
+      }
+      button4.onclick = function () {
+        answerDiv.textContent = "鎌倉、箱根、江の島"
+      }
+      //git add .
+      //git commit -m "コミット"
+      //git push origin master
+    </script>
+  </body>
+</html>
