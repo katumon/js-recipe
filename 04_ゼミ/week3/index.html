@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>配列を使ったメモアプリ</title>
+  </head>
+  <body>
+    <h2>配列を使ったメモアプリ</h2>
+    <input type="text" id="memo-input" />
+    <button id="add-button">保存</button>
+    <button id="shaffle-button">並び替え</button>
+    <div id="memo-container"></div>
+    <script>
+      const memoInput = document.getElementById("memo-input");
+      const addButton = document.getElementById("add-button");
+      const memoContainer = document.getElementById("memo-container");
+      const shaffleButton = document.getElementById("shaffle-button")
+      let memos = [];
+      if (localStorage.memos) {
+      // ローカルストレージのmemosキーからJSONを読み込む。
+      const memosJson = localStorage.memos
+      // JSON.parseで配列にして、memosを更新する。
+      memos = JSON.parse(memosJson)
+      
+      // ページ読み込み時に、配列の内容をブラウザに反映する。
+      for (let i = 0; i < memos.length; i++) {
+        const div = document.createElement("div")
+        div.textContent = memos[i]
+        memoContainer.append(div)
+      }
+     }
+
+      addButton.onclick = function () {
+        // inputに入力した内容を取得する
+        const text = memoInput.value;
+        memos.push(text)
+        // ローカルストレージのmemosキーにJSONにしたmemosを保存する。
+       localStorage.memos =  JSON.stringify(memos)
+        console.log(memos)
+
+        memoContainer.textContent =""
+        for (let i = 0; i<memos.length; i++){
+          const div = document.createElement("div");
+          div.textContent = memos[i];
+          memoContainer.append(div);
+        }
+        
+      shaffleButton.onclick = function(){
+        memos.sort()
+      }
+
+
+
+        // 取得した内容をDOMに反映する
+        /*const div1 = document.createElement("div");
+        div1.textContent = text;
+        memoContainer.append(div1);*/
+      };
+    </script>
+  </body>
+</html>
+    </script>
+  </body>
+</html>

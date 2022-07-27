@@ -1,9 +1,9 @@
 #quiz-image {
   height: 300px;
   width: 300px;
-  object-fit: contain;
+  object-fit: contain; /*縦と横の大きい方に合わせて、余白を残して表示*/
 }
 
 .hidden {
-  display: none;
+  display: none; /*画面に表示しない*/
 }
